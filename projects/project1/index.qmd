@@ -1,0 +1,44 @@
+---
+title: "Toast: A Case Study"
+image: "../../files/IMG_0115.JPG"
+subtitle: "An Analytical Deep Dive into My Cat"
+date: 2026-04-03
+categories: [Feline, Cats, Gatto, Kitty Cat]
+---
+
+## Project Overview
+
+This project investigates the behavioral patterns, demographic profile, and
+daily operations of Toast, a 3-year-old domestic shorthair cat adopted from
+the San Diego Humane Society (SDHS).
+
+## Subject Profile
+
+| Attribute     | Value                          |
+|---------------|-------------------------------|
+| Name          | Toast                         |
+| Age           | ~3 years (birthday TBD)       |
+| Color         | Black                         |
+| Origin        | San Diego Humane Society       |
+| Status        | Adopted                      |
+| Occupation    | Professional napper            |
+
+## Key Findings
+
+**Sleep Analysis:** Toast logs approximately 14–16 hours of sleep per day,
+consistently outperforming industry benchmarks for household cats.
+
+**Zoomies Frequency:** Peaks observed between 2–4am. Causation unknown.
+
+**Adoption Impact:** Studies show black cats are adopted at lower rates than
+other cats. Toast is a clear outlier and an excellent data point in favor of
+black cats.
+
+## Conclusion
+
+Toast represents a high-value, low-maintenance asset with strong long-term
+growth potential. His upcoming 3rd birthday marks a significant milestone
+and warrants further observation.
+
+---
+*Data collected via direct observation. Sample size: 1 cat.*

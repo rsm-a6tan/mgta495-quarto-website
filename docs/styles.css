@@ -1,0 +1,116 @@
+/* ── Colour palette ─────────────────────────────────────────
+   Blush pink  #f9d0da  (light accent / background tint)
+   Rose pink   #e8a0b0  (primary brand colour)
+   Mauve       #9e7089  (contrast / headings)
+   Deep mauve  #6b4459  (navbar, dark elements)
+   Off-white   #fdf5f7  (page background)
+   Body text   #3d2b35  (warm near-black)
+──────────────────────────────────────────────────────────── */
+
+/* Page background */
+body {
+  background-color: #fdf5f7;
+  color: #3d2b35;
+  font-family: 'Georgia', serif;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #6b4459 !important;
+  border-bottom: 3px solid #e8a0b0;
+}
+
+.navbar-brand,
+.navbar .nav-link {
+  color: #fdf5f7 !important;
+  font-family: 'Georgia', serif;
+  letter-spacing: 0.04em;
+}
+
+.navbar .nav-link:hover {
+  color: #f9d0da !important;
+  text-decoration: underline;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  color: #9e7089;
+  font-family: 'Georgia', serif;
+}
+
+/* Links */
+a {
+  color: #9e7089;
+}
+
+a:hover {
+  color: #6b4459;
+}
+
+/* About / jolla template tweaks */
+.quarto-title h1.title {
+  color: #6b4459;
+  font-size: 2.2rem;
+  letter-spacing: 0.03em;
+}
+
+/* Social icon buttons on About page */
+.about-links .about-link {
+  background-color: #e8a0b0;
+  color: #fdf5f7 !important;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 18px;
+  transition: background-color 0.2s ease;
+}
+
+.about-links .about-link:hover {
+  background-color: #9e7089;
+}
+
+/* Table of contents */
+#TOC {
+  border-left: 3px solid #e8a0b0;
+  padding-left: 1rem;
+}
+
+#TOC a {
+  color: #9e7089;
+}
+
+#TOC a:hover {
+  color: #6b4459;
+}
+
+/* Cards (Projects grid) */
+.card {
+  border: 1.5px solid #f9d0da;
+  border-radius: 12px;
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 18px rgba(158, 112, 137, 0.18);
+}
+
+.card-title {
+  color: #6b4459;
+}
+
+/* Footer */
+.nav-footer {
+  background-color: #6b4459;
+  color: #fdf5f7;
+}
+
+/* Horizontal rules */
+hr {
+  border-color: #f9d0da;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid #e8a0b0;
+  color: #9e7089;
+  font-style: italic;
+}

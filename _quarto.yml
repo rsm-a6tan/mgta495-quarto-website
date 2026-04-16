@@ -1,0 +1,24 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Amanda Tan"
+  navbar:
+    left:
+    - href: index.qmd
+      text: About
+    - href: resume.qmd
+      text: Resume
+    - href: projects.qmd
+      text: Projects
+  page-footer:
+    center: "© 2026 Amanda Tan · Kuala Lumpur → San Diego"
+
+format:
+  html:
+    theme:
+      - cosmo
+    css: styles.css
+    toc: true
+    title-block-banner: true

@@ -1,0 +1,12 @@
+{
+  "hash": "4539f05bfcae5cc83d77fed1e1cf524e",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"mgta495-quarto-website\"\n---\n\nThis is a Quarto website.\n\nTo learn more about Quarto websites visit <https://quarto.org/docs/websites>.\n\n::: {#312e6098 .cell execution_count=1}\n``` {.python .cell-code}\n1+4\n```\n\n::: {.cell-output .cell-output-display execution_count=1}\n```\n5\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "index_files/figure-html"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

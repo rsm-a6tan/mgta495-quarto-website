@@ -1,0 +1,72 @@
+---
+title: "S-Mobile: Predicting Customer Churn"
+subtitle: "Customer Analytics · MGTA 455"
+image: "../../files/Flag_of_Singapore.jpeg"
+date: 2025-4-8
+categories: [Python, Logistic Regression, CLV, Customer Analytics]
+---
+
+## Project Overview
+
+S-Mobile is a Singapore-based telecom provider facing a **2% monthly churn rate** across its 1M+ customer base. The goal of this project was to build a predictive model to identify customers at high risk of churning, and then translate that model into **actionable, financially-justified retention strategies**.
+
+This was a group project completed with teammates Damilare Shonuyi and Shalini Harwalkar.
+
+---
+
+## The Data
+
+The dataset contained **69,000 customer records** split into three samples:
+
+| Sample | Size | Churn Rate |
+|---|---|---|
+| Training | 27,300 | 50% (balanced) |
+| Test | 11,700 | 50% (balanced) |
+| Representative | 30,000 | 2% (real-world) |
+
+Key variables included monthly revenue, minutes of use, overage minutes, roaming calls, dropped calls, handset age, customer care contacts, retention call history, and demographic/lifestyle indicators (region, occupation, car/motorcycle ownership, travel history).
+
+---
+
+## Approach
+
+**1. Logistic Regression Model**
+
+We built and iteratively refined a logistic regression model to predict churn probability. Key predictors included overage minutes, revenue change, equipment age, and number of customer care calls. The model was evaluated on the test set before being applied to the representative (real-world) sample.
+
+**2. CLV-Based Intervention Analysis**
+
+Rather than stopping at predictions, we used **Customer Lifetime Value (CLV)** analysis to evaluate the financial impact of targeted retention interventions. We identified high-risk segments and modeled what would happen if churn rates were reduced by 20% through targeted discounts.
+
+---
+
+## Key Results
+
+Focusing on **overage customers** (those exceeding their plan minutes) as a high-churn, high-value segment:
+
+| Metric | Value |
+|---|---|
+| Avg. monthly revenue | SGD 75.65 |
+| CLV before intervention | SGD 552.62 |
+| CLV after intervention | SGD 651.13 |
+| CLV gain per customer | SGD 98.52 |
+| Cost per customer | SGD 20.87 |
+| Customers targeted (1M base) | 521,867 |
+| **Net benefit** | **SGD 40,519,171** |
+
+The proposed intervention — a 10% overage discount — costs **SGD 20.87 per customer** against a breakeven threshold of **SGD 98.52**, making it a highly favorable strategy.
+
+---
+
+## Tools & Methods
+
+- **Python** (Polars, pyrsm, NumPy)
+- Logistic Regression
+- Customer Lifetime Value modeling
+- Train/test/representative sample framework
+
+---
+
+## Takeaways
+
+This project reinforced how predictive modeling only creates value when connected to **business decisions and financial outcomes**. Identifying who will churn is step one — knowing *how much it's worth to keep them* is what drives action.

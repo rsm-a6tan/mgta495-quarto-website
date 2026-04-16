@@ -1,0 +1,5 @@
+---
+title: "My Resume"
+---
+
+{{< pdf files/Amanda_Tan_Analyst_Resume_copy.pdf width=100% height=800 >}}

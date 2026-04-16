@@ -1,0 +1,21 @@
+---
+title: "Amanda Tan"
+image: "files/IMG_1311.JPG"
+about:
+    template: jolla
+    links:
+        - icon: envelope
+          href: mailto:a6tan@ucsd.edu
+        - icon: linkedin
+          href: https://www.linkedin.com/in/aamandatan/
+---
+
+Hi, I'm Amanda! I'm an MSBA student at UC San Diego, graduating in June 2026.
+
+I grew up in Kuala Lumpur, Malaysia 🇲🇾 and made my way to San Diego to pursue a career at the intersection of data and brand storytelling. I'm passionate about using analytics to understand consumer behavior, drive marketing strategy, and build brands that people genuinely love.
+
+My ultimate goal is to work as a **Marketing Analyst** for a luxury beauty or fashion house — think LVMH: Dior, Sephora, Fenty, Givenchy. I'm drawn to brands that blend creativity with precision, and I believe great marketing decisions start with great data.
+
+Outside of work, you'll find me testing new skincare routines, keeping up with runway season, and hunting for the best matcha latte in whatever city I'm in.
+
+**Currently open to:** Full-time marketing analytics roles starting Summer/Fall 2026.
