@@ -3,6 +3,8 @@ title: "My Projects"
 listing:
   contents: projects
   type: grid
+  sort: "date desc"
+  sort-ui: true
 ---
 
 Here are some of the projects I've worked on

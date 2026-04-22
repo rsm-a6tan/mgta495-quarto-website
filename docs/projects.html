@@ -204,32 +204,29 @@ window.Quarto = {
 
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+    <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+      <option value="" disabled="" selected="" hidden="">Order By</option>
+      <option value="index" data-direction="asc">Default</option>
+      <option value="listing-title" data-direction="asc">
+        Title
+      </option>
+      <option value="listing-date-sort" data-direction="asc">
+        Date - Oldest
+      </option>
+      <option value="listing-date-sort" data-direction="desc">
+        Date - Newest
+      </option>
+      <option value="listing-author" data-direction="asc">
+        Author
+      </option>
+    </select>
+  </div>
+</div>
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-categories="UHl0aG9uJTJDQSUyRkIlMjBUZXN0aW5nJTJDU2ltdWxhdGlvbiUyQ0ZyZXF1ZW50aXN0JTIwU3RhdGlzdGljcw==" data-listing-date-sort="1776236400000" data-listing-file-modified-sort="1776321619970" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2099">
-<a href="./projects/project3/index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img loading="lazy" src="./files/httpsamandatan-mgta495.com.jpeg" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-A/B Testing a Call to Action
-</h5>
-<div class="card-text listing-description delink">
-Say you run a website with a newsletter sign-up form. You’ve got two versions of the prompt, the “call to action”, and you want to know which one actually gets people to…
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-
-</div>
-<div class="listing-date">
-Apr 15, 2026
-</div>
-</div>
-</div>
-</div></a>
-</div>
-<div class="g-col-1" data-index="1" data-categories="UHl0aG9uJTJDRGlmZi1pbi1EaWZmJTJDQ2F1c2FsJTIwSW5mZXJlbmNlJTJDTGFib3IlMjBFY29ub21pY3M=" data-listing-date-sort="1776754800000" data-listing-file-modified-sort="1776815796491" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1338">
+<div class="g-col-1" data-index="0" data-categories="UHl0aG9uJTJDRGlmZi1pbi1EaWZmJTJDQ2F1c2FsJTIwSW5mZXJlbmNlJTJDTGFib3IlMjBFY29ub21pY3M=" data-listing-date-sort="1776754800000" data-listing-file-modified-sort="1776815796491" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1338">
 <a href="./projects/project4/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -253,31 +250,31 @@ Apr 21, 2026
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="UHl0aG9uJTJDTG9naXN0aWMlMjBSZWdyZXNzaW9uJTJDQ0xWJTJDQ3VzdG9tZXIlMjBBbmFseXRpY3M=" data-listing-date-sort="1744095600000" data-listing-file-modified-sort="1776319490700" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="363">
-<a href="./projects/project2/index.html" class="quarto-grid-link">
+<div class="g-col-1" data-index="1" data-categories="UHl0aG9uJTJDQSUyRkIlMjBUZXN0aW5nJTJDU2ltdWxhdGlvbiUyQ0ZyZXF1ZW50aXN0JTIwU3RhdGlzdGljcw==" data-listing-date-sort="1776236400000" data-listing-file-modified-sort="1776321619970" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2099">
+<a href="./projects/project3/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img loading="lazy" src="./files/Flag_of_Singapore.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+<img loading="lazy" src="./files/httpsamandatan-mgta495.com.jpeg" class="thumbnail-image card-img" style="height: 150px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
-S-Mobile: Predicting Customer Churn
+A/B Testing a Call to Action
 </h5>
 <div class="card-text listing-description delink">
-S-Mobile is a Singapore-based telecom provider facing a <strong>2% monthly churn rate</strong> across its 1M+ customer base. The goal of this project was to build a predictive model to…<strong></strong>
+Say you run a website with a newsletter sign-up form. You’ve got two versions of the prompt, the “call to action”, and you want to know which one actually gets people to…
 </div>
 <div class="card-attribution card-text-small justify">
 <div class="listing-author">
 
 </div>
 <div class="listing-date">
-Apr 8, 2025
+Apr 15, 2026
 </div>
 </div>
 </div>
 </div></a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="RmVsaW5lJTJDQ2F0cyUyQ0dhdHRvJTJDS2l0dHklMjBDYXQ=" data-listing-date-sort="1775199600000" data-listing-file-modified-sort="1776319455783" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="306">
+<div class="g-col-1" data-index="2" data-categories="RmVsaW5lJTJDQ2F0cyUyQ0dhdHRvJTJDS2l0dHklMjBDYXQ=" data-listing-date-sort="1775199600000" data-listing-file-modified-sort="1776319455783" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="306">
 <a href="./projects/project1/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -296,6 +293,30 @@ This project investigates the behavioral patterns, demographic profile, and dail
 </div>
 <div class="listing-date">
 Apr 3, 2026
+</div>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="3" data-categories="UHl0aG9uJTJDTG9naXN0aWMlMjBSZWdyZXNzaW9uJTJDQ0xWJTJDQ3VzdG9tZXIlMjBBbmFseXRpY3M=" data-listing-date-sort="1744095600000" data-listing-file-modified-sort="1776319490700" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="363">
+<a href="./projects/project2/index.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./files/Flag_of_Singapore.jpeg" class="thumbnail-image card-img" style="height: 150px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+S-Mobile: Predicting Customer Churn
+</h5>
+<div class="card-text listing-description delink">
+S-Mobile is a Singapore-based telecom provider facing a <strong>2% monthly churn rate</strong> across its 1M+ customer base. The goal of this project was to build a predictive model to…<strong></strong>
+</div>
+<div class="card-attribution card-text-small justify">
+<div class="listing-author">
+
+</div>
+<div class="listing-date">
+Apr 8, 2025
 </div>
 </div>
 </div>
