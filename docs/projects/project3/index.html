@@ -258,7 +258,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="simulating-data">Simulating Data</h2>
 <p>In real life we wouldn’t know <span class="math inline">\(\pi_A\)</span> or <span class="math inline">\(\pi_B\)</span> — that’s the whole point of running the test. But here we get to set them ourselves and see how well our estimator recovers the truth.</p>
 <p>We’ll use <span class="math inline">\(\pi_A = 0.22\)</span> and <span class="math inline">\(\pi_B = 0.18\)</span>, so the true difference is <span class="math inline">\(\theta = 0.04\)</span>. We simulate 1,000 visitors per group.</p>
-<div id="f90afbed" class="cell" data-execution_count="2">
+<div id="96fca9b8" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pi_A, pi_B, n <span class="op">=</span> <span class="fl">0.22</span>, <span class="fl">0.18</span>, <span class="dv">1000</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data_A <span class="op">=</span> np.random.binomial(<span class="dv">1</span>, pi_A, n)</span>
@@ -279,11 +279,11 @@ Estimated difference: 0.038</code></pre>
 <h2 class="anchored" data-anchor-id="the-law-of-large-numbers">The Law of Large Numbers</h2>
 <p>The <strong>Law of Large Numbers (LLN)</strong> says that as you collect more data, your sample mean gets closer and closer to the true population mean. It’s the reason we trust <span class="math inline">\(\hat\theta\)</span> to be close to <span class="math inline">\(\theta\)</span> when our sample is large.</p>
 <p>To show this, we compute the element-wise differences between the two groups and track the <strong>running average</strong> as observations pile up:</p>
-<div id="b8ea3897" class="cell" data-execution_count="3">
+<div id="121394ac" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>diffs   <span class="op">=</span> data_A <span class="op">-</span> data_B</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>cum_avg <span class="op">=</span> np.cumsum(diffs) <span class="op">/</span> np.arange(<span class="dv">1</span>, n <span class="op">+</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="72b18a7f" class="cell" data-execution_count="4">
+<div id="768971ef" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -304,7 +304,7 @@ Estimated difference: 0.038</code></pre>
 <li>Repeat 1,000 times</li>
 <li>Take the standard deviation of those estimates, that’s the bootstrap standard error</li>
 </ol>
-<div id="6584312e" class="cell" data-execution_count="5">
+<div id="200ac78e" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>boot_estimates <span class="op">=</span> [</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    np.random.choice(data_A, n, replace<span class="op">=</span><span class="va">True</span>).mean() <span class="op">-</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    np.random.choice(data_B, n, replace<span class="op">=</span><span class="va">True</span>).mean()</span>
@@ -322,32 +322,32 @@ Estimated difference: 0.038</code></pre>
 </div>
 <p>We can compare the bootstrap SE to the closed-form analytical formula:</p>
 <p><span class="math display">\[SE(\hat\theta) = \sqrt{\frac{\hat\pi_A(1 - \hat\pi_A)}{n_A} + \frac{\hat\pi_B(1 - \hat\pi_B)}{n_B}}\]</span></p>
-<div id="9aa56759" class="cell" data-execution_count="6">
+<div id="deeb6582" class="cell" data-execution_count="6">
 <div class="cell-output cell-output-display" data-execution_count="6">
 <style type="text/css">
 </style>
 
-<div id="T_5b6e8" class="quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true">
+<div id="T_6e09a" class="quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="T_5b6e8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="T_6e09a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Bootstrap vs. Analytical Standard Error
 </figcaption>
-<div aria-describedby="T_5b6e8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table id="T_5b6e8" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<div aria-describedby="T_6e09a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="T_6e09a" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th id="T_5b6e8_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Method</th>
-<th id="T_5b6e8_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Standard Error</th>
+<th id="T_6e09a_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Method</th>
+<th id="T_6e09a_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Standard Error</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_5b6e8_row0_col0" class="data row0 col0">Bootstrap</td>
-<td id="T_5b6e8_row0_col1" class="data row0 col1">0.017650</td>
+<td id="T_6e09a_row0_col0" class="data row0 col0">Bootstrap</td>
+<td id="T_6e09a_row0_col1" class="data row0 col1">0.017650</td>
 </tr>
 <tr class="even">
-<td id="T_5b6e8_row1_col0" class="data row1 col0">Analytical</td>
-<td id="T_5b6e8_row1_col1" class="data row1 col1">0.017770</td>
+<td id="T_6e09a_row1_col0" class="data row1 col0">Analytical</td>
+<td id="T_6e09a_row1_col1" class="data row1 col1">0.017770</td>
 </tr>
 </tbody>
 </table>
@@ -358,7 +358,7 @@ Table&nbsp;1: Bootstrap vs. Analytical Standard Error
 </div>
 <p>They come out basically the same, which is reassuring. The bootstrap does a ton of computation to get to the same answer the formula gives for free. But it’s good to know both agree.</p>
 <p>Using the bootstrap SE, our 95% confidence interval for <span class="math inline">\(\theta\)</span> is:</p>
-<div id="0b1e106f" class="cell" data-execution_count="7">
+<div id="ed271a74" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"95% CI: [</span><span class="sc">{</span><span class="bu">round</span>(ci_lower, <span class="dv">4</span>)<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span><span class="bu">round</span>(ci_upper, <span class="dv">4</span>)<span class="sc">}</span><span class="ss">]"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>95% CI: [0.0034, 0.0726]</code></pre>
@@ -370,7 +370,7 @@ Table&nbsp;1: Bootstrap vs. Analytical Standard Error
 <h2 class="anchored" data-anchor-id="the-central-limit-theorem">The Central Limit Theorem</h2>
 <p>The <strong>Central Limit Theorem (CLT)</strong> is probably the most important result in intro stats. It says that no matter what the underlying distribution looks like, the sampling distribution of the sample mean becomes approximately Normal as your sample size grows. That applies to <span class="math inline">\(\hat\theta\)</span> too even though our raw data are just 0s and 1s.</p>
 <p>To see it happen, we simulate the sampling distribution of <span class="math inline">\(\hat\theta\)</span> at four different sample sizes and plot the histograms:</p>
-<div id="086df3d7" class="cell" data-execution_count="8">
+<div id="f1713f21" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -393,7 +393,7 @@ Table&nbsp;1: Bootstrap vs. Analytical Standard Error
 <p><span class="math display">\[z = \frac{\hat\theta}{SE(\hat\theta)} \;\dot\sim\; N(0,1)\]</span></p>
 <p>The p-value tells us how likely we’d be to see a result this extreme if <span class="math inline">\(H_0\)</span> were actually true. Small p-value = surprising result under the null = evidence against <span class="math inline">\(H_0\)</span>.</p>
 <p>Quick note: this is sometimes called a <strong>t-test</strong>. A true t-test assumes Normal data and an exact t-distribution for the test statistic. Our data are Bernoulli, so we’re using the CLT to justify approximate Normality. It’s more accurately a z-test. For large samples the two are basically identical.</p>
-<div id="041e4e7f" class="cell" data-execution_count="9">
+<div id="6c7449a1" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>z_stat  <span class="op">=</span> theta_hat <span class="op">/</span> analytical_se</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>p_value <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> (<span class="dv">1</span> <span class="op">-</span> stats.norm.cdf(<span class="bu">abs</span>(z_stat)))</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -404,40 +404,40 @@ Table&nbsp;1: Bootstrap vs. Analytical Standard Error
 P-value:        0.0325</code></pre>
 </div>
 </div>
-<div id="0b10b599" class="cell" data-execution_count="10">
+<div id="697b0f8b" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display" data-execution_count="10">
 <style type="text/css">
 </style>
 
-<div id="T_fba83" class="quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true">
+<div id="T_840c8" class="quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="T_fba83-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="T_840c8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;2: Hypothesis Test Results
 </figcaption>
-<div aria-describedby="T_fba83-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table id="T_fba83" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<div aria-describedby="T_840c8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="T_840c8" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th id="T_fba83_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Statistic</th>
-<th id="T_fba83_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Value</th>
+<th id="T_840c8_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Statistic</th>
+<th id="T_840c8_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_fba83_row0_col0" class="data row0 col0">θ̂ (estimated difference)</td>
-<td id="T_fba83_row0_col1" class="data row0 col1">0.038000</td>
+<td id="T_840c8_row0_col0" class="data row0 col0">θ̂ (estimated difference)</td>
+<td id="T_840c8_row0_col1" class="data row0 col1">0.038000</td>
 </tr>
 <tr class="even">
-<td id="T_fba83_row1_col0" class="data row1 col0">SE(θ̂)</td>
-<td id="T_fba83_row1_col1" class="data row1 col1">0.017800</td>
+<td id="T_840c8_row1_col0" class="data row1 col0">SE(θ̂)</td>
+<td id="T_840c8_row1_col1" class="data row1 col1">0.017800</td>
 </tr>
 <tr class="odd">
-<td id="T_fba83_row2_col0" class="data row2 col0">z-statistic</td>
-<td id="T_fba83_row2_col1" class="data row2 col1">2.138800</td>
+<td id="T_840c8_row2_col0" class="data row2 col0">z-statistic</td>
+<td id="T_840c8_row2_col1" class="data row2 col1">2.138800</td>
 </tr>
 <tr class="even">
-<td id="T_fba83_row3_col0" class="data row3 col0">p-value</td>
-<td id="T_fba83_row3_col1" class="data row3 col1">0.032500</td>
+<td id="T_840c8_row3_col0" class="data row3 col0">p-value</td>
+<td id="T_840c8_row3_col1" class="data row3 col1">0.032500</td>
 </tr>
 </tbody>
 </table>
@@ -459,7 +459,7 @@ Table&nbsp;2: Hypothesis Test Results
 <li><span class="math inline">\(\beta_0 + \beta_1\)</span> = expected outcome when <span class="math inline">\(D_i = 1\)</span> = the A group sign-up rate, <span class="math inline">\(\hat\pi_A\)</span></li>
 <li>So <span class="math inline">\(\beta_1 = \pi_A - \pi_B = \theta\)</span> — and <span class="math inline">\(\hat\beta_1\)</span> is the same number as <span class="math inline">\(\hat\theta\)</span></li>
 </ol>
-<div id="a6d58e1d" class="cell" data-execution_count="11">
+<div id="955ce19f" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.formula.api <span class="im">as</span> smf</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>reg_data <span class="op">=</span> pd.DataFrame({</span>
@@ -469,34 +469,34 @@ Table&nbsp;2: Hypothesis Test Results
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> smf.ols(<span class="st">"Y ~ D"</span>, data<span class="op">=</span>reg_data).fit()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="681372f4" class="cell" data-execution_count="12">
+<div id="32f71f92" class="cell" data-execution_count="12">
 <div class="cell-output cell-output-display" data-execution_count="12">
 <style type="text/css">
 </style>
 
-<div id="T_57d5b" class="quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true">
+<div id="T_ae5d5" class="quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="T_57d5b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="T_ae5d5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;3: Regression Output
 </figcaption>
-<div aria-describedby="T_57d5b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table id="T_57d5b" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<div aria-describedby="T_ae5d5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="T_ae5d5" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
-<th id="T_57d5b_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Estimate</th>
-<th id="T_57d5b_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Std. Error</th>
-<th id="T_57d5b_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">t-statistic</th>
-<th id="T_57d5b_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">p-value</th>
+<th id="T_ae5d5_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Estimate</th>
+<th id="T_ae5d5_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Std. Error</th>
+<th id="T_ae5d5_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">t-statistic</th>
+<th id="T_ae5d5_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">p-value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_57d5b_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">D (CTA A indicator)</td>
-<td id="T_57d5b_row0_col0" class="data row0 col0">0.038000</td>
-<td id="T_57d5b_row0_col1" class="data row0 col1">0.017800</td>
-<td id="T_57d5b_row0_col2" class="data row0 col2">2.137700</td>
-<td id="T_57d5b_row0_col3" class="data row0 col3">0.032700</td>
+<td id="T_ae5d5_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">D (CTA A indicator)</td>
+<td id="T_ae5d5_row0_col0" class="data row0 col0">0.038000</td>
+<td id="T_ae5d5_row0_col1" class="data row0 col1">0.017800</td>
+<td id="T_ae5d5_row0_col2" class="data row0 col2">2.137700</td>
+<td id="T_ae5d5_row0_col3" class="data row0 col3">0.032700</td>
 </tr>
 </tbody>
 </table>
@@ -515,7 +515,7 @@ Table&nbsp;3: Regression Output
 <p>This is called <strong>peeking</strong>, and it quietly breaks everything.</p>
 <p>The issue: a single test at <span class="math inline">\(\alpha = 0.05\)</span> has a 5% false positive rate. But every additional peek is another chance to get a false positive. Run 10 tests on the same accumulating data and the probability of at least one incorrect rejection is way above 5%.</p>
 <p>Let’s see how bad it actually gets. We simulate 10,000 experiments where <span class="math inline">\(\pi_A = \pi_B = 0.20\)</span> (no true difference) and peek every 100 observations:</p>
-<div id="a0bbe197" class="cell" data-execution_count="13">
+<div id="4e998a33" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>false_pos <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>peek_at   <span class="op">=</span> <span class="bu">range</span>(<span class="dv">100</span>, <span class="dv">1001</span>, <span class="dv">100</span>)</span>
@@ -538,32 +538,32 @@ Table&nbsp;3: Regression Output
 <pre><code>Empirical false positive rate: 0.1864</code></pre>
 </div>
 </div>
-<div id="55e9f225" class="cell" data-execution_count="14">
+<div id="98b3aa4d" class="cell" data-execution_count="14">
 <div class="cell-output cell-output-display" data-execution_count="14">
 <style type="text/css">
 </style>
 
-<div id="T_bae79" class="quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true">
+<div id="T_cfe2b" class="quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="T_bae79-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="T_cfe2b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;4: The Cost of Peeking — H₀: πA = πB = 0.20
 </figcaption>
-<div aria-describedby="T_bae79-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table id="T_bae79" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<div aria-describedby="T_cfe2b-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="T_cfe2b" class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
-<th id="T_bae79_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Approach</th>
-<th id="T_bae79_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">False Positive Rate</th>
+<th id="T_cfe2b_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Approach</th>
+<th id="T_cfe2b_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">False Positive Rate</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_bae79_row0_col0" class="data row0 col0">Single test (no peeking)</td>
-<td id="T_bae79_row0_col1" class="data row0 col1">5.0%</td>
+<td id="T_cfe2b_row0_col0" class="data row0 col0">Single test (no peeking)</td>
+<td id="T_cfe2b_row0_col1" class="data row0 col1">5.0%</td>
 </tr>
 <tr class="even">
-<td id="T_bae79_row1_col0" class="data row1 col0">10 peeks (every 100 obs)</td>
-<td id="T_bae79_row1_col1" class="data row1 col1">18.6%</td>
+<td id="T_cfe2b_row1_col0" class="data row1 col0">10 peeks (every 100 obs)</td>
+<td id="T_cfe2b_row1_col1" class="data row1 col1">18.6%</td>
 </tr>
 </tbody>
 </table>
