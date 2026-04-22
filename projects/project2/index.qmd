@@ -2,7 +2,7 @@
 title: "S-Mobile: Predicting Customer Churn"
 subtitle: "Customer Analytics · MGTA 455"
 image: "../../files/Flag_of_Singapore.jpeg"
-date: 2025-4-8
+date: 2026~-4-8
 categories: [Python, Logistic Regression, CLV, Customer Analytics]
 ---
 
