@@ -57,23 +57,23 @@ df['dFTE'] = df['FTE2'] - df['FTE']
 
 ## Introduction
 
-In 1992, New Jersey raised its minimum wage from $4.25 to $5.05 per hour. Pennsylvania kept its minimum wage the same. David Card and Alan Krueger saw this as a natural experiment: if you want to know whether a minimum wage increase kills jobs, here's a real-world test case with a ready-made control group right next door.
+n 1992, New Jersey raised its minimum wage from $4.25 to $5.05 per hour. Pennsylvania didn't. Card and Krueger basically looked at this and thought — wait, this is a perfect natural experiment. NJ got the treatment, PA didn't, and they're right next to each other. If the minimum wage kills jobs, we should see it here.
 
-The standard prediction from economics textbooks is pretty intuitive — if you force employers to pay more, they'll hire fewer people. Card and Krueger set out to test that assumption by surveying 410 fast-food restaurants in NJ and eastern PA before and after the NJ increase, then comparing employment trends across the two states.
+The textbook prediction is simple: force employers to pay more, they hire less. Card and Krueger wanted to actually test this by surveying 410 fast-food restaurants in both states before and after the NJ increase and comparing what happened to employment.
 
-Their finding was controversial: employment in NJ didn't fall. If anything, it went up slightly relative to PA. This post replicates their key results using the original survey data.
+Their result was pretty surprising — NJ employment didn't fall. It actually went up slightly relative to PA. This post replicates their key findings using the original survey data.
 
-The method they use is called **difference-in-differences (DiD)**. The idea is to compare how much employment changed in NJ (treated) versus how much it changed in PA (control) over the same period. By differencing out the time trend, we're left with just the effect of the policy:
+The method behind this is called difference-in-differences (DiD). Instead of just looking at what happened in NJ, we compare the change in NJ employment to the change in PA employment over the same period. That way any broader trends, like a recession hitting both states, get differenced out and we're left with just the effect of the wage increase:
 
 $$\hat\delta = (\bar{E}_{NJ,\text{after}} - \bar{E}_{NJ,\text{before}}) - (\bar{E}_{PA,\text{after}} - \bar{E}_{PA,\text{before}})$$
 
-This works as long as NJ and PA would have followed similar employment trends in the absence of the policy — the **parallel trends assumption**.
+The one thing this relies on is the parallel trends assumption — that NJ and PA would have moved similarly if the minimum wage hadn't changed.
 
 ## Main Analysis
 
 ### Table 2: Summary Statistics
 
-Before jumping into the DiD, the authors first check that NJ and PA stores looked similar before the minimum wage increase — otherwise the comparison isn't very credible. Table 2 reports means of key variables by state in both waves.
+Before looking at what changed, it's worth checking that NJ and PA stores actually looked similar going in. If they were already very different before the policy, the comparison isn't that useful. Table 2 shows means of key variables by state across both waves.
 
 ```{python}
 #| echo: false
@@ -100,11 +100,11 @@ summary = summary.round(2)
 summary
 ```
 
-A few things stand out. In Wave 1, NJ and PA stores look pretty similar — starting wages, hours open, and meal prices are close. The one notable pre-existing difference is that PA stores were slightly larger on average in terms of FTE employment. By Wave 2, NJ wages jumped sharply (as expected after the minimum wage hike) while PA wages stayed flat.
+For the most part, the two states look pretty comparable in Wave 1 — similar starting wages, hours, and meal prices. The main pre-existing difference is that PA stores were slightly larger on average. By Wave 2, NJ wages jumped sharply as expected after the minimum wage hike, while PA wages barely moved.
 
 ### Table 3: The Difference-in-Differences
 
-This is the core of the paper. Rows 1–3 show FTE employment before, after, and the change — separately for PA (column i), NJ (column ii), and the difference between them (column iii).
+The table shows average FTE employment before and after the increase, separately for PA, NJ, and the difference between them.
 
 ```{python}
 t3 = df.groupby('STATE')[['FTE','FTE2','dFTE']].mean()
@@ -115,15 +115,11 @@ t3.index = ['FTE before (Wave 1)', 'FTE after (Wave 2)', 'Change in FTE']
 t3.round(2)
 ```
 
-The key number is in the bottom-right: the difference-in-differences estimate. NJ employment went up while PA employment went down, leaving a relative gain of about **2.76 FTE employees** in NJ — or roughly 13% — after the minimum wage increase. This is the opposite of what the textbook predicts.
+The number to focus on is the bottom right — the difference-in-differences. NJ employment went up while PA employment went down, giving NJ a relative gain of about **2.76 FTE** employees, or around 13%. That's the opposite of what you'd expect if higher minimum wages reduced hiring.
 
 ### Table 4: Regression Version
 
-The DiD can also be estimated as a simple regression. If we define $\Delta E_i$ as the change in FTE employment at store $i$ and $NJ_i$ as an indicator for being in New Jersey, then:
-
-$$\Delta E_i = \alpha + \delta \cdot NJ_i + \varepsilon_i$$
-
-The coefficient $\delta$ is numerically the same as the DiD estimate above. The regression framework just lets us add controls and compute standard errors cleanly.
+You can also run this as a regression. If you regress the change in FTE employment on a dummy for being in NJ, the coefficient gives you the same DiD estimate — just with standard errors and a t-statistic attached.
 
 ```{python}
 reg_df = df[['dFTE','STATE','WAGE_ST']].dropna()
@@ -135,11 +131,11 @@ result.columns = ['Estimate','Std. Error','t-statistic','p-value','CI Lower','CI
 result[['Estimate','Std. Error','t-statistic','p-value']].round(2)
 ```
 
-The NJ coefficient comes out to about **2.33** — consistent with Table 3, with the small difference due to the regression dropping stores that are missing wage data. The standard error is around 1.19, giving a t-statistic just under 2. The effect is statistically significant at the 5% level.
+TThe NJ coefficient comes out around **2.33**. It's slightly lower than Table 3 because the regression drops stores missing wage data. The t-statistic is just under 2, which clears the standard significance threshold. So the positive employment effect isn't just noise.
 
 ## Something Additional: Visualizing the Parallel Trends
 
-One assumption that's baked into every DiD is **parallel trends** — the idea that NJ and PA would have had similar employment trajectories if the minimum wage hadn't changed. We can't fully test this with only two time periods, but we can visualize what actually happened to get a sense of whether the design is credible.
+One assumption for DiD is **parallel trends**. It's the idea that NJ and PA would have had similar employment trajectories if the minimum wage hadn't changed. We can't fully test this with only two time periods, but we can visualize what actually happened to get a sense of whether the design is credible.
 
 ```{python}
 #| echo: false
@@ -184,4 +180,4 @@ This plot also gives us some informal reassurance about parallel trends: both st
 
 ---
 
-Card and Krueger's finding remains one of the most cited and debated results in labor economics. The intuition — that a minimum wage increase leads to job losses — seems airtight in theory, but this paper showed that real labor markets don't always behave like textbook models. Their work helped shift the conversation toward more nuanced views of how wages and employment interact, and diff-in-diff became a go-to tool for evaluating policy changes across many fields.
+Card and Krueger's paper is one of the most cited and debated results in labor economics — not because the methods are complicated, but because the finding is so counterintuitive. The simple story is that wages went up in NJ and jobs didn't disappear. Their work pushed economists to take a harder look at how labor markets actually work in practice, and diff-in-diff became one of the most widely used tools for evaluating policy changes across economics, public health, and beyond.
