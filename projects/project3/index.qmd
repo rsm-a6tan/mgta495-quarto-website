@@ -316,3 +316,18 @@ The false positive rate with peeking ends up around 3 to 4 times the nominal 5%.
 The fix isn't to never look at data early. It's to use methods built for sequential testing — like **alpha spending** or **sequential probability ratio tests** — that account for the multiple looks. But that's a topic for another post.
 
 ---
+Key Takeaway Section:
+-Randomization is non-negotiable
+It’s what makes your results causal, not just correlational.
+-Small samples are noisy
+Early results can be misleading—wait for enough data.
+-Look beyond the point estimate
+Confidence intervals tell you how uncertain your result is.
+-Significance isn’t everything
+A statistically significant effect might still be too small to matter.
+-Peeking breaks your test
+Checking results early inflates false positives and leads to bad decisions.
+-A/B tests = simple regression
+This makes it easy to extend with more variables or variants.
+
+In the end, A/B testing isn’t just about finding a winner,it’s about making decisions you can trust.
