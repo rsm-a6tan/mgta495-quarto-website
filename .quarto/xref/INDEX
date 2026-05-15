@@ -25,5 +25,11 @@
   },
   "projects/project4/index.qmd": {
     "index.html": "6865a8de"
+  },
+  "projects/project5/index.qmd": {
+    "index.html": "88743f8c"
+  },
+  "projects/project5/tester2.qmd": {
+    "tester2.html": "d3f24609"
   }
 }
