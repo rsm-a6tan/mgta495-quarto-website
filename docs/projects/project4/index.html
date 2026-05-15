@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.13">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -59,7 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -68,15 +68,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../../">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ac077c1e730dfeb5e42400639d17284e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b678371c533e4a3479052e9903027f9e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -104,7 +103,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
@@ -122,7 +121,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -247,16 +246,12 @@ window.Quarto = {
 <section id="table-2-summary-statistics" class="level3">
 <h3 class="anchored" data-anchor-id="table-2-summary-statistics">Table 2: Summary Statistics</h3>
 <p>Before looking at what changed, it’s worth checking that NJ and PA stores actually looked similar going in. If they were already very different before the policy, the comparison isn’t that useful. Table 2 shows means of key variables by state across both waves.</p>
-<<<<<<< HEAD
-<div id="b5f42419" class="cell" data-execution_count="2">
-=======
-<div id="7673f0d9" class="cell" data-execution_count="2">
->>>>>>> 217c60da59820989cb72ef361faef6be2d0d6e6d
+<div id="55292a2f" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -267,37 +262,37 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">FTE Employment (Wave 1)</th>
+<td data-quarto-table-cell-role="th">FTE Employment (Wave 1)</td>
 <td>23.33</td>
 <td>20.44</td>
 <td>-2.89</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">FTE Employment (Wave 2)</th>
+<td data-quarto-table-cell-role="th">FTE Employment (Wave 2)</td>
 <td>21.17</td>
 <td>21.03</td>
 <td>-0.14</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Starting Wage (Wave 1)</th>
+<td data-quarto-table-cell-role="th">Starting Wage (Wave 1)</td>
 <td>4.63</td>
 <td>4.61</td>
 <td>-0.02</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Starting Wage (Wave 2)</th>
+<td data-quarto-table-cell-role="th">Starting Wage (Wave 2)</td>
 <td>4.62</td>
 <td>5.08</td>
 <td>0.46</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Price of Full Meal (Wave 1)</th>
+<td data-quarto-table-cell-role="th">Price of Full Meal (Wave 1)</td>
 <td>3.03</td>
 <td>3.35</td>
 <td>0.32</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">Hours Open/Day (Wave 1)</th>
+<td data-quarto-table-cell-role="th">Hours Open/Day (Wave 1)</td>
 <td>14.53</td>
 <td>14.42</td>
 <td>-0.11</td>
@@ -313,23 +308,18 @@ window.Quarto = {
 <section id="table-3-the-difference-in-differences" class="level3">
 <h3 class="anchored" data-anchor-id="table-3-the-difference-in-differences">Table 3: The Difference-in-Differences</h3>
 <p>The table shows average FTE employment before and after the increase, separately for PA, NJ, and the difference between them.</p>
-<<<<<<< HEAD
-<div id="73219c1d" class="cell" data-execution_count="3">
+<div id="70018588" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>t3 <span class="op">=</span> df.groupby(<span class="st">'STATE'</span>)[[<span class="st">'FTE'</span>,<span class="st">'FTE2'</span>,<span class="st">'dFTE'</span>]].mean()</span>
-=======
-<div id="3392a33a" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>t3 <span class="op">=</span> df.groupby(<span class="st">'STATE'</span>)[[<span class="st">'FTE'</span>,<span class="st">'FTE2'</span>,<span class="st">'dFTE'</span>]].mean()</span>
->>>>>>> 217c60da59820989cb72ef361faef6be2d0d6e6d
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>t3.index <span class="op">=</span> [<span class="st">'PA'</span>,<span class="st">'NJ'</span>]</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>t3 <span class="op">=</span> t3.T</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>t3[<span class="st">'NJ - PA'</span>] <span class="op">=</span> t3[<span class="st">'NJ'</span>] <span class="op">-</span> t3[<span class="st">'PA'</span>]</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>t3.index <span class="op">=</span> [<span class="st">'FTE before (Wave 1)'</span>, <span class="st">'FTE after (Wave 2)'</span>, <span class="st">'Change in FTE'</span>]</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>t3.<span class="bu">round</span>(<span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>t3.<span class="bu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
 
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -340,19 +330,19 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">FTE before (Wave 1)</th>
+<td data-quarto-table-cell-role="th">FTE before (Wave 1)</td>
 <td>23.33</td>
 <td>20.44</td>
 <td>-2.89</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">FTE after (Wave 2)</th>
+<td data-quarto-table-cell-role="th">FTE after (Wave 2)</td>
 <td>21.17</td>
 <td>21.03</td>
 <td>-0.14</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">Change in FTE</th>
+<td data-quarto-table-cell-role="th">Change in FTE</td>
 <td>-2.28</td>
 <td>0.47</td>
 <td>2.75</td>
@@ -368,24 +358,19 @@ window.Quarto = {
 <section id="table-4-regression-version" class="level3">
 <h3 class="anchored" data-anchor-id="table-4-regression-version">Table 4: Regression Version</h3>
 <p>You can also run this as a regression. If you regress the change in FTE employment on a dummy for being in NJ, the coefficient gives you the same DiD estimate — just with standard errors and a t-statistic attached.</p>
-<<<<<<< HEAD
-<div id="45541bb9" class="cell" data-execution_count="4">
+<div id="c51f0026" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>reg_df <span class="op">=</span> df[[<span class="st">'dFTE'</span>,<span class="st">'STATE'</span>,<span class="st">'WAGE_ST'</span>]].dropna()</span>
-=======
-<div id="2028d01c" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>reg_df <span class="op">=</span> df[[<span class="st">'dFTE'</span>,<span class="st">'STATE'</span>,<span class="st">'WAGE_ST'</span>]].dropna()</span>
->>>>>>> 217c60da59820989cb72ef361faef6be2d0d6e6d
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>model  <span class="op">=</span> smf.ols(<span class="st">'dFTE ~ STATE'</span>, data<span class="op">=</span>reg_df).fit()</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> model.summary2().tables[<span class="dv">1</span>].loc[[<span class="st">'STATE'</span>]]</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>result.index <span class="op">=</span> [<span class="st">'NJ dummy'</span>]</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>result.columns <span class="op">=</span> [<span class="st">'Estimate'</span>,<span class="st">'Std. Error'</span>,<span class="st">'t-statistic'</span>,<span class="st">'p-value'</span>,<span class="st">'CI Lower'</span>,<span class="st">'CI Upper'</span>]</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>result[[<span class="st">'Estimate'</span>,<span class="st">'Std. Error'</span>,<span class="st">'t-statistic'</span>,<span class="st">'p-value'</span>]].<span class="bu">round</span>(<span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>result[[<span class="st">'Estimate'</span>,<span class="st">'Std. Error'</span>,<span class="st">'t-statistic'</span>,<span class="st">'p-value'</span>]].<span class="bu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
 
-<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -397,7 +382,7 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">NJ dummy</th>
+<td data-quarto-table-cell-role="th">NJ dummy</td>
 <td>2.36</td>
 <td>1.15</td>
 <td>2.06</td>
@@ -415,15 +400,11 @@ window.Quarto = {
 <section id="something-additional-visualizing-the-parallel-trends" class="level2">
 <h2 class="anchored" data-anchor-id="something-additional-visualizing-the-parallel-trends">Something Additional: Visualizing the Parallel Trends</h2>
 <p>One assumption for DiD is <strong>parallel trends</strong>. It’s the idea that NJ and PA would have had similar employment trajectories if the minimum wage hadn’t changed. We can’t fully test this with only two time periods, but we can visualize what actually happened to get a sense of whether the design is credible.</p>
-<<<<<<< HEAD
-<div id="b984dde0" class="cell" data-execution_count="5">
-=======
-<div id="49ccf6ce" class="cell" data-execution_count="5">
->>>>>>> 217c60da59820989cb72ef361faef6be2d0d6e6d
+<div id="34318d80" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-6-output-1.png" width="659" height="374" class="figure-img"></p>
+<p><img src="index_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -488,14 +469,13 @@ window.Quarto = {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
