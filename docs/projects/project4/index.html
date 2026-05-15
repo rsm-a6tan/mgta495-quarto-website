@@ -246,7 +246,7 @@ window.Quarto = {
 <section id="table-2-summary-statistics" class="level3">
 <h3 class="anchored" data-anchor-id="table-2-summary-statistics">Table 2: Summary Statistics</h3>
 <p>Before looking at what changed, it’s worth checking that NJ and PA stores actually looked similar going in. If they were already very different before the policy, the comparison isn’t that useful. Table 2 shows means of key variables by state across both waves.</p>
-<div id="58668096" class="cell" data-execution_count="2">
+<div id="ddf60e0f" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
@@ -308,7 +308,7 @@ window.Quarto = {
 <section id="table-3-the-difference-in-differences" class="level3">
 <h3 class="anchored" data-anchor-id="table-3-the-difference-in-differences">Table 3: The Difference-in-Differences</h3>
 <p>The table shows average FTE employment before and after the increase, separately for PA, NJ, and the difference between them.</p>
-<div id="369ec4bf" class="cell" data-execution_count="3">
+<div id="54f4fa45" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>t3 <span class="op">=</span> df.groupby(<span class="st">'STATE'</span>)[[<span class="st">'FTE'</span>,<span class="st">'FTE2'</span>,<span class="st">'dFTE'</span>]].mean()</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>t3.index <span class="op">=</span> [<span class="st">'PA'</span>,<span class="st">'NJ'</span>]</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>t3 <span class="op">=</span> t3.T</span>
@@ -358,7 +358,7 @@ window.Quarto = {
 <section id="table-4-regression-version" class="level3">
 <h3 class="anchored" data-anchor-id="table-4-regression-version">Table 4: Regression Version</h3>
 <p>You can also run this as a regression. If you regress the change in FTE employment on a dummy for being in NJ, the coefficient gives you the same DiD estimate — just with standard errors and a t-statistic attached.</p>
-<div id="71c98e95" class="cell" data-execution_count="4">
+<div id="5025a1be" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>reg_df <span class="op">=</span> df[[<span class="st">'dFTE'</span>,<span class="st">'STATE'</span>,<span class="st">'WAGE_ST'</span>]].dropna()</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>model  <span class="op">=</span> smf.ols(<span class="st">'dFTE ~ STATE'</span>, data<span class="op">=</span>reg_df).fit()</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -400,7 +400,7 @@ window.Quarto = {
 <section id="something-additional-visualizing-the-parallel-trends" class="level2">
 <h2 class="anchored" data-anchor-id="something-additional-visualizing-the-parallel-trends">Something Additional: Visualizing the Parallel Trends</h2>
 <p>One assumption for DiD is <strong>parallel trends</strong>. It’s the idea that NJ and PA would have had similar employment trajectories if the minimum wage hadn’t changed. We can’t fully test this with only two time periods, but we can visualize what actually happened to get a sense of whether the design is credible.</p>
-<div id="66207133" class="cell" data-execution_count="5">
+<div id="ccf98e28" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">

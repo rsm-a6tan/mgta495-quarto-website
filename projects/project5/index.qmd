@@ -359,7 +359,7 @@ plt.show()
 
 The estimated average treatment effect is roughly **0.79 additional patents per firm** over five years. Rather than reading a single number off the regression output, we simulate it — predicting patents for every firm twice (once as a customer, once as a non-customer) and averaging the difference across all 1,500 firms. The distribution skews right, so firms that already patent heavily see the largest absolute gains, but the direction of the effect is positive across the board.
 
-Before taking that number at face value, two things are worth keeping in mind. First, this is an **observational study** — firms weren't randomly assigned to Blueprinty. Unobserved differences such as R&D budget or internal patent counsel could still be driving the result. Second, the Poisson model assumes mean equals variance; if patent counts are overdispersed, a Negative Binomial model would be more appropriate. With those caveats in mind, the evidence here is consistent with Blueprinty's marketing claim — but a randomized trial would be needed to establish true causality.
+Before taking that number at face value, two things are worth keeping in mind. First, this is an **observational study** — firms weren't randomly assigned to Blueprinty, so we can't rule out that something else is driving the difference. Second, the Poisson model assumes the mean and variance are equal, which may not hold here. If patent counts are more spread out than the model expects, a different model would fit better. That said, the pattern is consistent with Blueprinty's claim — it just isn't proof of it.
 
 ---
 
